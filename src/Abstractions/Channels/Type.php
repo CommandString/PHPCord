@@ -9,7 +9,7 @@ enum Type: int
     case GUILD_VOICE = 2;
     case GROUP_DM = 3;
     case GUILD_CATEGORY = 4;
-    case GUILD_ANNOUCEMENT = 5;
+    case GUILD_ANNOUNCEMENT = 5;
     case ANNOUNCEMENT_THREAD = 10;
     case PUBLIC_THREAD = 11;
     case PRIVATE_THREAD = 12;
