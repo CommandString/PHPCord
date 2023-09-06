@@ -63,7 +63,7 @@ abstract class Http
             $request->getBody(),
             $request->getHeaders()
         )->then(
-            static function (stdClass|array $response) {
+            static function ($response) {
                 return $response;
             },
             $this->handleError(...)
@@ -73,7 +73,7 @@ abstract class Http
     protected function mapRequest(Request $request, string $class): PromiseInterface
     {
         return $this->sendRequest($request)->then(
-            function (stdClass $response) use ($class) {
+            function ($response) use ($class) {
                 return $this->map(
                     $class,
                     $response
@@ -86,7 +86,7 @@ abstract class Http
     protected function mapArrayRequest(Request $request, string $class): PromiseInterface
     {
         return $this->sendRequest($request)->then(
-            function (stdClass $response) use ($class) {
+            function ($response) use ($class) {
                 $array = [];
 
                 foreach ($response as $item) {
