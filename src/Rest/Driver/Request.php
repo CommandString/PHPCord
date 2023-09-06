@@ -9,13 +9,14 @@ class Request
     public function __construct(
         protected string $url,
         protected Method $method = Method::GET,
-        protected null|string|array $body = null
+        protected string|array|null $body = null,
+        protected array $query = [],
     ) {
     }
 
     public function getUrl(): string
     {
-        return $this->url;
+        return $this->url . '?' . http_build_query($this->query);
     }
 
     public function withUrl(string $url): Request
