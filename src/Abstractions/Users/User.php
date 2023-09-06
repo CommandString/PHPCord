@@ -21,7 +21,7 @@ class User
     public ?bool $verified;
     public ?string $email;
     public ?int $flags;
-    public ?int $premiumType;
+    public ?PremiumType $premiumType;
     public ?int $publicFlags;
     public ?string $avatarDecoration;
 }
