@@ -2,6 +2,7 @@
 
 namespace CommandString\PHPCord\Rest;
 
+use CommandString\PHPCord\Abstractions\Channels\Channel;
 use CommandString\PHPCord\Abstractions\Guilds\Guild;
 use CommandString\PHPCord\Rest\Driver\Http;
 use CommandString\PHPCord\Rest\Driver\Request;
@@ -13,7 +14,6 @@ use React\Promise\PromiseInterface;
  * getPreview
  * modify
  * delete
- * getChannels
  * createChannel
  * modifyChannelPositions
  * listActiveThreads
@@ -65,6 +65,16 @@ class Guilds extends Http
                 ],
             ),
             class: Guild::class
+        );
+    }
+
+    public function getChannels(string $guildId): PromiseInterface
+    {
+        return $this->mapArrayRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::GUILD_CHANNELS, $guildId),
+            ),
+            class: Channel::class
         );
     }
 }
