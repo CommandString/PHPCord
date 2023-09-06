@@ -4,6 +4,7 @@ namespace CommandString\PHPCord\Rest;
 
 use CommandString\PHPCord\Abstractions\Channels\Channel;
 use CommandString\PHPCord\Rest\Driver\Http;
+use CommandString\PHPCord\Rest\Driver\Method;
 use CommandString\PHPCord\Rest\Driver\Request;
 use Discord\Http\Endpoint;
 use React\Promise\PromiseInterface;
@@ -56,6 +57,19 @@ class Channels extends Http
                 url: Endpoint::bind(Endpoint::CHANNEL, $channelId),
             ),
             Channel::class
+        );
+    }
+
+    public function createMessage(string $channelId, string $content): PromiseInterface
+    {
+        return $this->sendRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::CHANNEL_MESSAGES, $channelId),
+                method: Method::POST,
+                body: [
+                    'content' => $content,
+                ]
+            )
         );
     }
 }
