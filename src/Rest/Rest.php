@@ -11,6 +11,7 @@ class Rest
     public readonly Application $application;
     public readonly Users $users;
     public readonly Channels $channels;
+    public readonly Guilds $guilds;
 
     public function __construct(
         Http $http,
