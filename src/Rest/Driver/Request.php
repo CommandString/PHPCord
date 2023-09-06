@@ -16,6 +16,10 @@ class Request
 
     public function getUrl(): string
     {
+        if (empty($this->query)) {
+            return $this->url;
+        }
+
         return $this->url . '?' . http_build_query($this->query);
     }
 
@@ -40,12 +44,8 @@ class Request
         return $that;
     }
 
-    public function getBody(): ?string
+    public function getBody(): string|array|null
     {
-        if (is_array($this->body)) {
-            return json_encode($this->body);
-        }
-
         return $this->body;
     }
 
