@@ -2,7 +2,8 @@
 
 namespace CommandString\PHPCord\Rest;
 
-use CommandString\PHPCord\Abstractions\Channels\Channel;
+use CommandString\PHPCord\Parts\Channels\Channel;
+use CommandString\PHPCord\Parts\Messages\Message;
 use CommandString\PHPCord\Rest\Driver\Http;
 use CommandString\PHPCord\Rest\Driver\Method;
 use CommandString\PHPCord\Rest\Driver\Request;
@@ -14,8 +15,6 @@ use React\Promise\PromiseInterface;
  * modify
  * delete
  * getMessages
- * getMessage
- * createMessage
  * crosspostMessage
  * createReaction
  * deleteOwnReaction
@@ -60,16 +59,36 @@ class Channels extends Http
         );
     }
 
-    public function createMessage(string $channelId, string $content): PromiseInterface
+    public function createMessage(string $channelId, Message $message): PromiseInterface
     {
         return $this->sendRequest(
             new Request(
                 url: Endpoint::bind(Endpoint::CHANNEL_MESSAGES, $channelId),
                 method: Method::POST,
-                body: [
-                    'content' => $content,
-                ]
+                body: objectToSnakeCaseArray($message)
             )
+        );
+    }
+
+    public function getMessage(string $channelId, string $messageId): PromiseInterface
+    {
+        return $this->mapRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::CHANNEL_MESSAGE, $channelId, $messageId),
+            ),
+            Message::class
+        );
+    }
+
+    public function modify(string $channelId, Channel $channel): PromiseInterface
+    {
+        return $this->mapRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::CHANNEL, $channelId),
+                method: Method::PATCH,
+                body: get_object_vars($channel)
+            ),
+            Channel::class
         );
     }
 }
