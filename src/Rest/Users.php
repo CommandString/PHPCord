@@ -2,7 +2,7 @@
 
 namespace CommandString\PHPCord\Rest;
 
-use CommandString\PHPCord\Abstractions\Users\User;
+use CommandString\PHPCord\Parts\Users\User;
 use CommandString\PHPCord\Rest\Driver\Http;
 use CommandString\PHPCord\Rest\Driver\Request;
 use React\Promise\PromiseInterface;

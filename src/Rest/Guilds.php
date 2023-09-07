@@ -2,8 +2,8 @@
 
 namespace CommandString\PHPCord\Rest;
 
-use CommandString\PHPCord\Abstractions\Channels\Channel;
-use CommandString\PHPCord\Abstractions\Guilds\Guild;
+use CommandString\PHPCord\Parts\Channels\Channel;
+use CommandString\PHPCord\Parts\Guilds\Guild;
 use CommandString\PHPCord\Rest\Driver\Http;
 use CommandString\PHPCord\Rest\Driver\Request;
 use Discord\Http\Endpoint;
