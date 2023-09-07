@@ -10,7 +10,7 @@ use Discord\Http\Endpoint;
 use React\Promise\PromiseInterface;
 
 /**
- * TODO: Create bindings
+ * TODO: Finish bindings
  * getPreview
  * modify
  * delete

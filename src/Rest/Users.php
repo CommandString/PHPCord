@@ -8,7 +8,7 @@ use CommandString\PHPCord\Rest\Driver\Request;
 use React\Promise\PromiseInterface;
 
 /**
- * TODO: Implement the rest of the endpoints
+ * TODO: Finish Bindings
  * Get
  * CreateDm
  * GetConnections
