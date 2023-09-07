@@ -86,7 +86,7 @@ class Channels extends Http
             new Request(
                 url: Endpoint::bind(Endpoint::CHANNEL, $channelId),
                 method: Method::PATCH,
-                body: get_object_vars($channel)
+                body: objectToSnakeCaseArray($channel)
             ),
             Channel::class
         );
