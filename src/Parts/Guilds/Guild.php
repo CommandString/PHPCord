@@ -2,6 +2,7 @@
 
 namespace CommandString\PHPCord\Parts\Guilds;
 
+use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
@@ -25,7 +26,7 @@ class Guild
     public int $defaultMessageNotifications;
     public int $explicitContentFilter;
 
-    // TODO: Create Role abstraction
+    #[ObjectArrayType('roles', Role::class)]
     public array $roles;
 
     // TODO: Create Emoji abstraction

@@ -25,15 +25,18 @@ class Message
     public bool $tts;
     public bool $mentionEveryone;
 
+    /** @var User[] $mentions */
     #[ObjectArrayType('mentions', User::class)]
     public array $mentions;
 
     #[PrimitiveArrayType('mentionRoles', PrimitiveType::STRING)]
     public array $mentionRoles;
 
+    /** @var ChannelMention[] $channelMentions */
     #[ObjectArrayType('mentionChannels', ChannelMention::class, nullable: true)]
     public ?array $channelMentions;
 
+    /** @var Attachment[] $attachments */
     #[ObjectArrayType('attachments', Attachment::class)]
     public array $attachments;
 

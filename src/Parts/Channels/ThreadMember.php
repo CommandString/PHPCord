@@ -2,6 +2,9 @@
 
 namespace CommandString\PHPCord\Parts\Channels;
 
+use CommandString\PHPCord\Parts\Guilds\Member;
+use Tnapf\JsonMapper\Attributes\ObjectArrayType;
+
 class ThreadMember
 {
     public string $id;
@@ -9,6 +12,6 @@ class ThreadMember
     public ?string $joinTimestamp;
     public int $flags;
 
-    // TODO: Create Member abstraction
+    #[ObjectArrayType('member', Member::class)]
     public ?array $member;
 }
