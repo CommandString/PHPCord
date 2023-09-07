@@ -25,7 +25,7 @@ composer require commandstring/phpcord
 ```php
 <?php
 
-use CommandString\PHPCord\Abstractions\Users\User;
+use CommandString\PHPCord\Parts\Users\User;
 use CommandString\PHPCord\Discord;
 use Discord\Http\Drivers\Guzzle;
 use Monolog\Handler\StreamHandler;

@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions\Users;
+namespace CommandString\PHPCord\Parts\Users;
 
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 

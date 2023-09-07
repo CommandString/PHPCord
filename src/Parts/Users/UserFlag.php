@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions\Users;
+namespace CommandString\PHPCord\Parts\Users;
 
-enum Flag: int
+enum UserFlag: int
 {
     case STAFF = 1 << 0;
     case PARTNER = 1 << 1;

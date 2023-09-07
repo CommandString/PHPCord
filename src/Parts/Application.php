@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions;
+namespace CommandString\PHPCord\Parts;
 
-use CommandString\PHPCord\Abstractions\Users\User;
+use CommandString\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\PrimitiveArrayType;
 use Tnapf\JsonMapper\Attributes\PrimitiveType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;

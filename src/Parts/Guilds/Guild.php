@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions\Guilds;
+namespace CommandString\PHPCord\Parts\Guilds;
 
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 

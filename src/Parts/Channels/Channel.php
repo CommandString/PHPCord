@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions\Channels;
+namespace CommandString\PHPCord\Parts\Channels;
 
-use CommandString\PHPCord\Abstractions\Permissions\Overwrite;
-use CommandString\PHPCord\Abstractions\Users\User;
+use CommandString\PHPCord\Parts\Permissions\Overwrite;
+use CommandString\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\PrimitiveArrayType;
 use Tnapf\JsonMapper\Attributes\PrimitiveType;
@@ -13,7 +13,7 @@ use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 class Channel
 {
     public string $id;
-    public Type $type;
+    public ChannelType $type;
     public ?string $guildId;
     public ?int $position;
 

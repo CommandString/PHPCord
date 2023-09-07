@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions\Channels;
+namespace CommandString\PHPCord\Parts\Channels;
 
-enum Flags: int
+enum ChannelFlag: int
 {
     case PINNED = 1 << 0;
     case REQUIRE_TAGS = 1 << 4;

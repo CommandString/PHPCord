@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Abstractions\Channels;
+namespace CommandString\PHPCord\Parts\Channels;
 
-enum Type: int
+enum ChannelType: int
 {
     case GUILD_TEXT = 0;
     case DM = 1;
