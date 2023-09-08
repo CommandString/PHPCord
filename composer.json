@@ -1,5 +1,5 @@
 {
-  "name": "commandstring/php-cord",
+  "name": "phpcord/phpcord",
   "description": "A Discord API Wrapper in PHP",
   "license": "MIT",
   "type": "library",
