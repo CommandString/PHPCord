@@ -3,7 +3,6 @@
 namespace CommandString\PHPCord\Rest;
 
 use CommandString\PHPCord\Parts\Channels\Channel;
-use CommandString\PHPCord\Parts\Messages\Message;
 use CommandString\PHPCord\Rest\Driver\Http;
 use CommandString\PHPCord\Rest\Driver\Method;
 use CommandString\PHPCord\Rest\Driver\Request;
@@ -12,28 +11,12 @@ use React\Promise\PromiseInterface;
 
 /**
  * TODO: Finish bindings
- * modify
  * delete
- * getMessages
- * crosspostMessage
- * createReaction
- * deleteOwnReaction
- * deleteUserReaction
- * getReactions
- * deleteAllReactions
- * deleteAllReactionsForEmoji
- * editMessage
- * deleteMessage
- * bulkDeleteMessages
  * editChannelPermissions
  * getChannelInvites
  * createChannelInvite
  * deleteChannelPermission
  * followAnnouncementChannel
- * triggerTypingIndicator
- * getPinnedMessage
- * pinMessage
- * unpinMessage
  * groupDmAddRecipient
  * groupDmRemoveRecipient
  * startThread
@@ -59,27 +42,6 @@ class Channels extends Http
         );
     }
 
-    public function createMessage(string $channelId, Message $message): PromiseInterface
-    {
-        return $this->sendRequest(
-            new Request(
-                url: Endpoint::bind(Endpoint::CHANNEL_MESSAGES, $channelId),
-                method: Method::POST,
-                body: objectToSnakeCaseArray($message)
-            )
-        );
-    }
-
-    public function getMessage(string $channelId, string $messageId): PromiseInterface
-    {
-        return $this->mapRequest(
-            new Request(
-                url: Endpoint::bind(Endpoint::CHANNEL_MESSAGE, $channelId, $messageId),
-            ),
-            Message::class
-        );
-    }
-
     public function modify(string $channelId, Channel $channel): PromiseInterface
     {
         return $this->mapRequest(
@@ -89,6 +51,16 @@ class Channels extends Http
                 body: objectToSnakeCaseArray($channel)
             ),
             Channel::class
+        );
+    }
+
+    public function triggerTyping(string $channelId): PromiseInterface
+    {
+        return $this->sendRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::CHANNEL_TYPING, $channelId),
+                method: Method::POST
+            )
         );
     }
 }
