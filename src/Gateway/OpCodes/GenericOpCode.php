@@ -2,8 +2,6 @@
 
 namespace CommandString\PHPCord\Gateway\OpCodes;
 
-use CommandString\PHPCord\Gateway\Event;
-
 class GenericOpCode
 {
     public OpCode $op;

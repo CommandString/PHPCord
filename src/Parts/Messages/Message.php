@@ -3,7 +3,6 @@
 namespace CommandString\PHPCord\Parts\Messages;
 
 use CommandString\PHPCord\Parts\Channels\Channel;
-use CommandString\PHPCord\Parts\Guilds\Role;
 use CommandString\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\IntType;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;

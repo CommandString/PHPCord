@@ -3,6 +3,7 @@
 namespace CommandString\PHPCord\Gateway;
 
 use Evenement\EventEmitter;
+
 use function Ratchet\Client\connect;
 
 class Ratchet extends EventEmitter implements Websocket
@@ -13,7 +14,9 @@ class Ratchet extends EventEmitter implements Websocket
     private const CLOSED = 'closed';
     private const CONNECTED = 'connected';
 
-    public function __construct(private readonly string $uri) {}
+    public function __construct(private readonly string $uri)
+    {
+    }
 
     public function start(): void
     {

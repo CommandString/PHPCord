@@ -8,7 +8,8 @@ use Tnapf\JsonMapper\Attributes\ObjectType;
 /**
  * @property HelloData $d
  */
-class HelloOpCode extends GenericOpCode {
+class HelloOpCode extends GenericOpCode
+{
     #[ObjectType('d', HelloData::class)]
     public mixed $d;
 }

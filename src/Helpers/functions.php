@@ -13,6 +13,7 @@ function objectToSnakeCaseArray(object $class): array
         if (is_object($value)) {
             if (is_subclass_of($value, BackedEnum::class)) {
                 $array[$key] = $value->value;
+
                 continue;
             }
 

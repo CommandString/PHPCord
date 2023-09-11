@@ -16,6 +16,7 @@ class Ready
 
     #[ObjectArrayType('guilds', UnavailableGuild::class)]
     public array $guilds;
+
     public string $sessionId;
     public string $resumeGatewayUrl;
     public ?array $shard;

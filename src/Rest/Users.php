@@ -36,7 +36,7 @@ class Users extends Http
                 url: '/users/@me/channels',
                 method: Method::POST,
                 body: [
-                    'recipient_id' => $recipientId
+                    'recipient_id' => $recipientId,
                 ]
             ),
             Channel::class
