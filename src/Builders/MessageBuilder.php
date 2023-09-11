@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord\Builders;
+namespace PHPCord\PHPCord\Builders;
 
-use CommandString\PHPCord\Parts\Messages\Message;
-use CommandString\PHPCord\Parts\Messages\MessageReference;
+use PHPCord\PHPCord\Parts\Messages\Message;
+use PHPCord\PHPCord\Parts\Messages\MessageReference;
 
 // TODO: Finish builder
 class MessageBuilder implements BuilderInterface

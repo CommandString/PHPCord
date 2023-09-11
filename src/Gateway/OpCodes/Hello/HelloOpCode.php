@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway\OpCodes\Hello;
+namespace PHPCord\PHPCord\Gateway\OpCodes\Hello;
 
-use CommandString\PHPCord\Gateway\OpCodes\GenericOpCode;
+use PHPCord\PHPCord\Gateway\OpCodes\GenericOpCode;
 use Tnapf\JsonMapper\Attributes\ObjectType;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Helpers;
+namespace PHPCord\PHPCord\Helpers;
 
 class Snowflake
 {

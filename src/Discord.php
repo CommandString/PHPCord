@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord;
+namespace PHPCord\PHPCord;
 
-use CommandString\PHPCord\Gateway\Gateway;
-use CommandString\PHPCord\Rest\Rest;
+use PHPCord\PHPCord\Gateway\Gateway;
+use PHPCord\PHPCord\Rest\Rest;
 use Discord\Http\DriverInterface;
 use Discord\Http\Http;
 use Psr\Log\LoggerInterface;

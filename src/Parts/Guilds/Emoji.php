@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Guilds;
+namespace PHPCord\PHPCord\Parts\Guilds;
 
-use CommandString\PHPCord\Parts\Users\User;
+use PHPCord\PHPCord\Parts\Users\User;
 use Stringable;
 
 class Emoji implements Stringable

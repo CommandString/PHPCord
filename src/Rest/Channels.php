@@ -1,11 +1,11 @@
 <?php
 
-namespace CommandString\PHPCord\Rest;
+namespace PHPCord\PHPCord\Rest;
 
-use CommandString\PHPCord\Parts\Channels\Channel;
-use CommandString\PHPCord\Rest\Driver\Http;
-use CommandString\PHPCord\Rest\Driver\Method;
-use CommandString\PHPCord\Rest\Driver\Request;
+use PHPCord\PHPCord\Parts\Channels\Channel;
+use PHPCord\PHPCord\Rest\Driver\Http;
+use PHPCord\PHPCord\Rest\Driver\Method;
+use PHPCord\PHPCord\Rest\Driver\Request;
 use Discord\Http\Endpoint;
 use React\Promise\PromiseInterface;
 

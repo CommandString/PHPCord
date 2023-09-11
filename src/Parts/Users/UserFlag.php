@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Users;
+namespace PHPCord\PHPCord\Parts\Users;
 
 enum UserFlag: int
 {

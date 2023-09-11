@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Channels;
+namespace PHPCord\PHPCord\Parts\Channels;
 
-use CommandString\PHPCord\Parts\Guilds\Member;
+use PHPCord\PHPCord\Parts\Guilds\Member;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 
 class ThreadMember

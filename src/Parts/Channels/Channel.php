@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Channels;
+namespace PHPCord\PHPCord\Parts\Channels;
 
-use CommandString\PHPCord\Parts\Permissions\Overwrite;
-use CommandString\PHPCord\Parts\Users\User;
+use PHPCord\PHPCord\Parts\Permissions\Overwrite;
+use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\PrimitiveArrayType;
 use Tnapf\JsonMapper\Attributes\PrimitiveType;

@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway\OpCodes\Identity;
+namespace PHPCord\PHPCord\Gateway\OpCodes\Identity;
 
 class UpdatePresence
 {

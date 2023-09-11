@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Guilds;
+namespace PHPCord\PHPCord\Parts\Guilds;
 
 enum RoleFlags: int
 {

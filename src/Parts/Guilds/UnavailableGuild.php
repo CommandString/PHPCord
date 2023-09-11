@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Guilds;
+namespace PHPCord\PHPCord\Parts\Guilds;
 
 class UnavailableGuild
 {

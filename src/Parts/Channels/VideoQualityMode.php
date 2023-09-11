@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Channels;
+namespace PHPCord\PHPCord\Parts\Channels;
 
 enum VideoQualityMode: int
 {

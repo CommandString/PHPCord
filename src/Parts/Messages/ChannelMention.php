@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Messages;
+namespace PHPCord\PHPCord\Parts\Messages;
 
-use CommandString\PHPCord\Parts\Channels\ChannelType;
+use PHPCord\PHPCord\Parts\Channels\ChannelType;
 
 class ChannelMention
 {

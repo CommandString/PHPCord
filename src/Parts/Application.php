@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord\Parts;
+namespace PHPCord\PHPCord\Parts;
 
-use CommandString\PHPCord\Parts\Guilds\Guild;
-use CommandString\PHPCord\Parts\Users\User;
+use PHPCord\PHPCord\Parts\Guilds\Guild;
+use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\PrimitiveArrayType;
 use Tnapf\JsonMapper\Attributes\PrimitiveType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;

@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway\OpCodes\Identity;
+namespace PHPCord\PHPCord\Gateway\OpCodes\Identity;
 
-use CommandString\PHPCord\Gateway\OpCodes\GenericOpCode;
+use PHPCord\PHPCord\Gateway\OpCodes\GenericOpCode;
 use Tnapf\JsonMapper\Attributes\ObjectType;
 
 class IdentityOpCode extends GenericOpCode

@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Messages;
+namespace PHPCord\PHPCord\Parts\Messages;
 
-use CommandString\PHPCord\Parts\Channels\Channel;
-use CommandString\PHPCord\Parts\Users\User;
+use PHPCord\PHPCord\Parts\Channels\Channel;
+use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\IntType;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\ObjectType;

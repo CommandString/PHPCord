@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Rest;
+namespace PHPCord\PHPCord\Rest;
 
 use Discord\Http\Http;
 use Psr\Log\LoggerInterface;

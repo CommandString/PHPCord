@@ -1,10 +1,10 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway\Events;
+namespace PHPCord\PHPCord\Gateway\Events;
 
-use CommandString\PHPCord\Parts\Application;
-use CommandString\PHPCord\Parts\Guilds\UnavailableGuild;
-use CommandString\PHPCord\Parts\Users\User;
+use PHPCord\PHPCord\Parts\Application;
+use PHPCord\PHPCord\Parts\Guilds\UnavailableGuild;
+use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 

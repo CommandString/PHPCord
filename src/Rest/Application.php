@@ -1,10 +1,10 @@
 <?php
 
-namespace CommandString\PHPCord\Rest;
+namespace PHPCord\PHPCord\Rest;
 
-use CommandString\PHPCord\Parts\Application as ApplicationAbstraction;
-use CommandString\PHPCord\Rest\Driver\Http;
-use CommandString\PHPCord\Rest\Driver\Request;
+use PHPCord\PHPCord\Parts\Application as ApplicationAbstraction;
+use PHPCord\PHPCord\Rest\Driver\Http;
+use PHPCord\PHPCord\Rest\Driver\Request;
 use React\Promise\PromiseInterface;
 
 class Application extends Http

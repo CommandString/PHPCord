@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway;
+namespace PHPCord\PHPCord\Gateway;
 
 enum Intent: int
 {

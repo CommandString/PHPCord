@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Rest\Driver;
+namespace PHPCord\PHPCord\Rest\Driver;
 
-use CommandString\PHPCord\Helpers\HandleErrorTrait;
+use PHPCord\PHPCord\Helpers\HandleErrorTrait;
 use Psr\Log\LoggerInterface;
 use React\Promise\PromiseInterface;
 use stdClass;

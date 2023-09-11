@@ -30,12 +30,12 @@
   },
   "autoload": {
     "psr-4": {
-      "CommandString\\PHPCord\\": "src/"
+      "PHPCord\\PHPCord\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "CommandString\\PHPCord\\Test\\": "tests/"
+      "PHPCord\\PHPCord\\Test\\": "tests/"
     },
     "files": [
       "src/Helpers/functions.php"

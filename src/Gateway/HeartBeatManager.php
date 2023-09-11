@@ -1,9 +1,9 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway;
+namespace PHPCord\PHPCord\Gateway;
 
-use CommandString\PHPCord\Gateway\OpCodes\GenericOpCode;
-use CommandString\PHPCord\Gateway\OpCodes\OpCode;
+use PHPCord\PHPCord\Gateway\OpCodes\GenericOpCode;
+use PHPCord\PHPCord\Gateway\OpCodes\OpCode;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\Loop;
 

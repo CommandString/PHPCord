@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Test;
+namespace PHPCord\PHPCord\Test;
 
 use PHPUnit\Framework\TestCase;
 

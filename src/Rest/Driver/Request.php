@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Rest\Driver;
+namespace PHPCord\PHPCord\Rest\Driver;
 
 class Request
 {

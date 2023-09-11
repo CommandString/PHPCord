@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Builders;
+namespace PHPCord\PHPCord\Builders;
 
 interface BuilderInterface
 {

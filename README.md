@@ -24,11 +24,11 @@ composer require phpcord/phpcord
 ```php
 <?php
 
-use CommandString\PHPCord\Builders\MessageBuilder;
-use CommandString\PHPCord\Discord;
-use CommandString\PHPCord\Gateway\Event;
-use CommandString\PHPCord\Gateway\Events\TypingStart;
-use CommandString\PHPCord\Gateway\Intent;
+use PHPCord\PHPCord\Builders\MessageBuilder;
+use PHPCord\PHPCord\Discord;
+use PHPCord\PHPCord\Gateway\Event;
+use PHPCord\PHPCord\Gateway\Events\TypingStart;
+use PHPCord\PHPCord\Gateway\Intent;
 use Discord\Http\Drivers\Guzzle;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;

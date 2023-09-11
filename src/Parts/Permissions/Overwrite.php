@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Parts\Permissions;
+namespace PHPCord\PHPCord\Parts\Permissions;
 
 class Overwrite
 {

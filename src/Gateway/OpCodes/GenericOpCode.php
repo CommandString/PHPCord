@@ -1,6 +1,6 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway\OpCodes;
+namespace PHPCord\PHPCord\Gateway\OpCodes;
 
 class GenericOpCode
 {

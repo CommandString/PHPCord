@@ -1,15 +1,15 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway;
+namespace PHPCord\PHPCord\Gateway;
 
-use CommandString\PHPCord\Gateway\Events\Ready;
-use CommandString\PHPCord\Gateway\Events\TypingStart;
-use CommandString\PHPCord\Gateway\OpCodes\GenericOpCode;
-use CommandString\PHPCord\Gateway\OpCodes\Hello\HelloOpCode;
-use CommandString\PHPCord\Gateway\OpCodes\Identity\ConnectionProperties;
-use CommandString\PHPCord\Gateway\OpCodes\Identity\IdentityData;
-use CommandString\PHPCord\Gateway\OpCodes\OpCode;
-use CommandString\PHPCord\Helpers\HandleErrorTrait;
+use PHPCord\PHPCord\Gateway\Events\Ready;
+use PHPCord\PHPCord\Gateway\Events\TypingStart;
+use PHPCord\PHPCord\Gateway\OpCodes\GenericOpCode;
+use PHPCord\PHPCord\Gateway\OpCodes\Hello\HelloOpCode;
+use PHPCord\PHPCord\Gateway\OpCodes\Identity\ConnectionProperties;
+use PHPCord\PHPCord\Gateway\OpCodes\Identity\IdentityData;
+use PHPCord\PHPCord\Gateway\OpCodes\OpCode;
+use PHPCord\PHPCord\Helpers\HandleErrorTrait;
 use Evenement\EventEmitter;
 use Psr\Log\LoggerInterface;
 use Throwable;

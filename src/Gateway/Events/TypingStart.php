@@ -1,8 +1,8 @@
 <?php
 
-namespace CommandString\PHPCord\Gateway\Events;
+namespace PHPCord\PHPCord\Gateway\Events;
 
-use CommandString\PHPCord\Parts\Guilds\Member;
+use PHPCord\PHPCord\Parts\Guilds\Member;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
