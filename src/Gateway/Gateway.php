@@ -2,6 +2,9 @@
 
 namespace PHPCord\PHPCord\Gateway;
 
+use PHPCord\PHPCord\Gateway\Events\GuildMemberAdd;
+use PHPCord\PHPCord\Gateway\Events\GuildMemberRemove;
+use PHPCord\PHPCord\Gateway\Events\MessageCreate;
 use PHPCord\PHPCord\Gateway\Events\Ready;
 use PHPCord\PHPCord\Gateway\Events\TypingStart;
 use PHPCord\PHPCord\Gateway\OpCodes\GenericOpCode;
@@ -120,6 +123,9 @@ class Gateway extends EventEmitter
                 $map = match ($event) {
                     Event::TYPING_START => TypingStart::class,
                     Event::READY => Ready::class,
+                    Event::GUILD_MEMBER_ADD => GuildMemberAdd::class,
+                    Event::GUILD_MEMBER_REMOVE => GuildMemberRemove::class,
+                    Event::MESSAGE_CREATE => MessageCreate::class,
                     default => null
                 };
 
