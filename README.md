@@ -24,25 +24,37 @@ composer require phpcord/phpcord
 ```php
 <?php
 
-use CommandString\PHPCord\Parts\Users\User;
+use CommandString\PHPCord\Builders\MessageBuilder;
 use CommandString\PHPCord\Discord;
+use CommandString\PHPCord\Gateway\Event;
+use CommandString\PHPCord\Gateway\Events\TypingStart;
+use CommandString\PHPCord\Gateway\Intent;
 use Discord\Http\Drivers\Guzzle;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = (new Discord(
-    '<token>'
+$bot = (new Discord(
+    '<token>',
     new Logger('PHPCord', [new StreamHandler('php://stdout')])
 ))->withRest(
-    new Guzzle()
-);
+    new Guzzle(options: ['verify' => false])
+)->withGateway();
 
-$client->rest->users->getCurrent()->then(
-    static function (User $user) {
-        echo "Current user is {$user->username}";
-    }
-);
+$bot->gateway->onEvent(Event::TYPING_START, static function (TypingStart $typing) use ($bot) {
+    $bot->rest->messages->create(
+        $typing->channelId,
+        (new MessageBuilder())
+            ->withContent('Typing...')
+            ->build()
+    );
+});
+
+$bot->gateway->withIntents(
+    Intent::DIRECT_MESSAGE_TYPING, 
+    Intent::GUILD_MESSAGE_TYPING
+)->start();
+
 ```
 
