@@ -14,8 +14,9 @@
     "discord-php/http": "^10.3",
     "guzzlehttp/guzzle": "^7.8",
     "monolog/monolog": "^3.4",
+    "ratchet/pawl": "^0.4.1",
     "react/async": "^4.1",
-    "tnapf/jsonmapper": "^1.3"
+    "tnapf/jsonmapper": "dev-allow-mixed"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.31",
@@ -23,6 +24,7 @@
     "friendsofphp/php-cs-fixer": "^3.16",
     "jetbrains/phpstorm-attributes": "^1.0",
     "phpunit/phpunit": "^10.1",
+    "react/stream": "^1.3",
     "roave/security-advisories": "dev-latest",
     "xheaven/composer-git-hooks": "^3.0"
   },
