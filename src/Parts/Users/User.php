@@ -2,10 +2,11 @@
 
 namespace CommandString\PHPCord\Parts\Users;
 
+use Stringable;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
-class User
+class User implements Stringable
 {
     public string $id;
     public string $username;
@@ -24,4 +25,9 @@ class User
     public ?PremiumType $premiumType;
     public ?int $publicFlags;
     public ?string $avatarDecoration;
+
+    public function __toString(): string
+    {
+        return !isset($this->id) ? '' : "<@$this->id>";
+    }
 }
