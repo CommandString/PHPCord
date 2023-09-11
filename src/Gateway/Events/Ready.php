@@ -14,6 +14,7 @@ class Ready
     public int $v;
     public User $user;
 
+    /** @var UnavailableGuild[] $guilds */
     #[ObjectArrayType('guilds', UnavailableGuild::class)]
     public array $guilds;
 

@@ -28,6 +28,7 @@ class Message
     #[ObjectArrayType('mentions', User::class)]
     public array $mentions;
 
+    /** @var string[] $mentionRoles */
     #[PrimitiveArrayType('mentionRoles', PrimitiveType::STRING)]
     public array $mentionRoles;
 

@@ -26,9 +26,11 @@ class Guild
     public int $defaultMessageNotifications;
     public int $explicitContentFilter;
 
+    /** @var Role[] $roles */
     #[ObjectArrayType('roles', Role::class)]
     public array $roles;
 
+    /** @var Emoji[] $emojis */
     #[ObjectArrayType('emojis', Emoji::class)]
     public array $emojis;
 

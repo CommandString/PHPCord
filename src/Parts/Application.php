@@ -16,6 +16,7 @@ class Application
     public ?string $icon;
     public ?string $description;
 
+    /** @var string[] */
     #[PrimitiveArrayType('rpcOrigins', PrimitiveType::STRING, true)]
     public ?array $rpcOrigins;
 
