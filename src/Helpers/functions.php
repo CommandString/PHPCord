@@ -11,6 +11,11 @@ function objectToSnakeCaseArray(object $class): array
         $key = $converter->convertFromCase($key);
 
         if (is_object($value)) {
+            if (is_subclass_of($value, BackedEnum::class)) {
+                $array[$key] = $value->value;
+                continue;
+            }
+
             $array[$key] = objectToSnakeCaseArray($value);
         } else {
             $array[$key] = $value;
