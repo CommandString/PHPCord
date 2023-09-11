@@ -29,7 +29,7 @@ class Guild
     #[ObjectArrayType('roles', Role::class)]
     public array $roles;
 
-    // TODO: Create Emoji abstraction
+    #[ObjectArrayType('emojis', Emoji::class)]
     public array $emojis;
 
     // TODO: Create Feature abstraction
