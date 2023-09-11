@@ -2,6 +2,7 @@
 
 namespace CommandString\PHPCord;
 
+use CommandString\PHPCord\Gateway\Gateway;
 use CommandString\PHPCord\Rest\Rest;
 use Discord\Http\DriverInterface;
 use Discord\Http\Http;
@@ -12,10 +13,11 @@ use React\EventLoop\Loop;
 class Discord
 {
     public readonly Rest $rest;
+    public readonly Gateway $gateway;
 
     public function __construct(
-        private string $token,
-        private LoggerInterface $logger = new NullLogger()
+        private readonly string $token,
+        private readonly LoggerInterface $logger = new NullLogger()
     ) {
         $this->logger->debug('Discord client created');
     }
@@ -33,6 +35,14 @@ class Discord
         );
 
         $this->rest = new Rest($http, $this->logger);
+
+        return $this;
+    }
+
+    public function withGateway(): self
+    {
+        $this->logger->debug('Gateway mode enabled');
+        $this->gateway = new Gateway($this->token, $this->logger);
 
         return $this;
     }
