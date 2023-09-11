@@ -16,9 +16,8 @@ A modern Discord API wrapper for PHP
 ## Installation
 
 ```bash
-composer require commandstring/phpcord
+composer require phpcord/phpcord
 ```
-*not setup yet*
 
 ## Example
 
