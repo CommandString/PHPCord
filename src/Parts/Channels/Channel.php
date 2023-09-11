@@ -18,8 +18,8 @@ class Channel
     public ?int $position;
 
     /** @var Overwrite[] */
-    #[ObjectArrayType('permissionOverwrites', Overwrite::class)]
-    public array $permissionOverwrites;
+    #[ObjectArrayType('permissionOverwrites', Overwrite::class, nullable: true)]
+    public ?array $permissionOverwrites;
 
     public ?string $name;
     public ?string $topic;
