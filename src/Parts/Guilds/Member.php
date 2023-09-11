@@ -17,6 +17,7 @@ class Member
     /** @var string[] */
     #[PrimitiveArrayType('roles', PrimitiveType::STRING)]
     public ?array $roles;
+
     public string $joinedAt;
     public ?string $premiumSince;
     public ?bool $deaf;
