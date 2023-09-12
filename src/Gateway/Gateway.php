@@ -14,6 +14,7 @@ use PHPCord\PHPCord\Gateway\OpCodes\Identity\IdentityData;
 use PHPCord\PHPCord\Gateway\OpCodes\OpCode;
 use PHPCord\PHPCord\Helpers\HandleErrorTrait;
 use Evenement\EventEmitter;
+use PHPCord\PHPCord\Parts\Interactions\Interaction;
 use Psr\Log\LoggerInterface;
 use Throwable;
 use Tnapf\JsonMapper\Mapper;
@@ -126,6 +127,7 @@ class Gateway extends EventEmitter
                     Event::GUILD_MEMBER_ADD => GuildMemberAdd::class,
                     Event::GUILD_MEMBER_REMOVE => GuildMemberRemove::class,
                     Event::MESSAGE_CREATE => MessageCreate::class,
+                    Event::INTERACTION_CREATE => Interaction::class,
                     default => null
                 };
 
