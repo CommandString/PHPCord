@@ -3,6 +3,7 @@
 namespace PHPCord\PHPCord\Builders;
 
 use PHPCord\PHPCord\Parts\Messages\Message;
+use PHPCord\PHPCord\Parts\Messages\MessageFlag;
 use PHPCord\PHPCord\Parts\Messages\MessageReference;
 
 // TODO: Finish builder
@@ -18,6 +19,17 @@ class MessageBuilder implements BuilderInterface
     public function withContent(string $content): self
     {
         $this->message->content = $content;
+
+        return $this;
+    }
+
+    public function withFlags(MessageFlag ...$flags): self
+    {
+        $flags = array_reduce($flags, static function (int $flags, MessageFlag $flag) {
+            return $flags | $flag->value;
+        }, 0);
+
+        $this->message->flags = $flags;
 
         return $this;
     }
