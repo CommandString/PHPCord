@@ -2,7 +2,7 @@
 
 namespace PHPCord\PHPCord\Parts\Commands;
 
-use Tnapf\JsonMapper\Attributes\ObjectType;
+use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
@@ -17,6 +17,6 @@ class ApplicationCommand
     public string $description;
     public ?array $descriptionLocalizations;
 
-    #[ObjectType('options', ApplicationCommandOption::class, nullable: true)]
+    #[ObjectArrayType('options', ApplicationCommandOption::class, nullable: true)]
     public ?array $options;
 }
