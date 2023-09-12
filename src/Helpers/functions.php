@@ -6,22 +6,28 @@ function objectToSnakeCaseArray(object $class): array
 {
     $converter = new SnakeToCamelCase();
 
-    $array = [];
-    foreach (get_object_vars($class) as $key => $value) {
-        $key = $converter->convertFromCase($key);
+    $loopArray = static function (array $givenArray) use ($converter, &$loopArray): array
+    {
+        $array = [];
+        foreach ($givenArray as $key => $value) {
+            $key = $converter->convertFromCase($key);
 
-        if (is_object($value)) {
-            if (is_subclass_of($value, BackedEnum::class)) {
-                $array[$key] = $value->value;
+            if (is_object($value)) {
+                if (is_subclass_of($value, BackedEnum::class)) {
+                    $array[$key] = $value->value;
 
-                continue;
+                    continue;
+                }
+
+                $array[$key] = objectToSnakeCaseArray($value);
+            } else if (is_array($value)) {
+                $array[$key] = $loopArray($value);
+            } else {
+                $array[$key] = $value;
             }
-
-            $array[$key] = objectToSnakeCaseArray($value);
-        } else {
-            $array[$key] = $value;
         }
-    }
+        return $array;
+    };
 
-    return $array;
+    return $loopArray(get_object_vars($class));
 }
