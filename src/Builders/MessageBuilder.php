@@ -2,6 +2,7 @@
 
 namespace PHPCord\PHPCord\Builders;
 
+use PHPCord\PHPCord\Parts\Messages\Components\MessageComponent;
 use PHPCord\PHPCord\Parts\Messages\Message;
 use PHPCord\PHPCord\Parts\Messages\MessageFlag;
 use PHPCord\PHPCord\Parts\Messages\MessageReference;
@@ -30,6 +31,12 @@ class MessageBuilder implements BuilderInterface
         }, 0);
 
         $this->message->flags = $flags;
+
+        return $this;
+    }
+
+    public function withComponent(MessageComponent $component): self {
+        $this->message->components[] = $component;
 
         return $this;
     }
