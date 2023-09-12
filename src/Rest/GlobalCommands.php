@@ -60,12 +60,11 @@ class GlobalCommands extends Http
 
     public function deleteCommand(string $applicationId, string $commandId): PromiseInterface
     {
-        return $this->mapRequest(
+        return $this->sendRequest(
             new Request(
                 Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMAND, $applicationId, $commandId),
                 Method::DELETE
-            ),
-            ApplicationCommand::class
+            )
         );
     }
 

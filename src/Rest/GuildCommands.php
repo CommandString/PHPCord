@@ -60,12 +60,11 @@ class GuildCommands extends Http
 
     public function deleteCommand(string $applicationId, string $guildId, string $commandId): PromiseInterface
     {
-        return $this->mapRequest(
+        return $this->sendRequest(
             new Request(
                 Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMAND, $applicationId, $guildId, $commandId),
                 Method::DELETE
-            ),
-            ApplicationCommand::class
+            )
         );
     }
 
