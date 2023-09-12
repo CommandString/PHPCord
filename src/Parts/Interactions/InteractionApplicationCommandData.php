@@ -8,7 +8,7 @@ use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
-class InteractionData
+class InteractionApplicationCommandData
 {
     public string $id;
     public string $name;
