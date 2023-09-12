@@ -3,6 +3,7 @@
 namespace PHPCord\PHPCord\Parts\Messages;
 
 use PHPCord\PHPCord\Parts\Channels\Channel;
+use PHPCord\PHPCord\Parts\Messages\Components\MessageComponent;
 use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\IntType;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
@@ -66,11 +67,10 @@ class Message
     #[ObjectType('referencedMessage', self::class, nullable: true)]
     public ?self $referencedMessage;
 
-    // TODO: Create Message Interaction part
-    public ?array $interaction;
+    public ?MessageInteraction $interaction;
     public ?Channel $thread;
 
-    // TODO: Create Component part
+    #[ObjectArrayType('components', MessageComponent::class, nullable: true)]
     public array $components;
 
     // TODO: Create StickerItem part
