@@ -21,6 +21,7 @@ class ApplicationCommandOption
 
     #[ObjectArrayType('channelTypes', ChannelType::class, nullable: true)]
     public ?array $channelTypes;
+
     public ?int $minValue;
     public ?int $maxValue;
     public ?int $minLength;
