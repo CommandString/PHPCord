@@ -61,8 +61,6 @@ class Message
     public ?array $application;
     public ?string $applicationId;
     public ?MessageReference $messageReference;
-
-    // TODO: Create Message Flags enum
     public ?int $flags;
 
     #[ObjectType('referencedMessage', self::class, nullable: true)]
