@@ -15,6 +15,8 @@ class Rest
     public readonly Guilds $guilds;
     public readonly Emojis $emojis;
     public readonly GlobalCommands $globalCommands;
+    public readonly GuildCommands $guildCommands;
+    public readonly Interactions $interactions;
 
     public function __construct(
         Http $http,
