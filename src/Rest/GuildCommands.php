@@ -9,13 +9,13 @@ use PHPCord\PHPCord\Rest\Driver\Method;
 use PHPCord\PHPCord\Rest\Driver\Request;
 use React\Promise\PromiseInterface;
 
-class GlobalCommands extends Http
+class GuildCommands extends Http
 {
-    public function getCommands(string $applicationId, bool $withLocalizations = false): PromiseInterface
+    public function getCommands(string $applicationId, string $guildId, bool $withLocalizations = false): PromiseInterface
     {
         return $this->mapArrayRequest(
             new Request(
-                Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMANDS, $applicationId),
+                Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMANDS, $applicationId, $guildId),
                 Method::GET,
                 query: $withLocalizations ? ['with_localizations' => 'true'] : []
             ),
@@ -23,22 +23,22 @@ class GlobalCommands extends Http
         );
     }
 
-    public function getCommand(string $applicationId, string $commandId): PromiseInterface
+    public function getCommand(string $applicationId, string $guildId, string $commandId): PromiseInterface
     {
         return $this->mapRequest(
             new Request(
-                Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMAND, $applicationId, $commandId),
+                Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMAND, $applicationId, $guildId, $commandId),
                 Method::GET
             ),
             ApplicationCommand::class
         );
     }
 
-    public function createCommand(string $applicationId, ApplicationCommand $command): PromiseInterface
+    public function createCommand(string $applicationId, string $guildId, ApplicationCommand $command): PromiseInterface
     {
         return $this->mapRequest(
             new Request(
-                Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMANDS, $applicationId),
+                Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMANDS, $applicationId, $guildId),
                 Method::POST,
                 body: objectToSnakeCaseArray($command)
             ),
@@ -46,11 +46,11 @@ class GlobalCommands extends Http
         );
     }
 
-    public function updateCommand(string $applicationId, ApplicationCommand $command): PromiseInterface
+    public function updateCommand(string $applicationId, string $guildId, string $commandId, ApplicationCommand $command): PromiseInterface
     {
         return $this->mapRequest(
             new Request(
-                Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMAND, $applicationId, $command->id),
+                Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMAND, $applicationId, $guildId, $commandId),
                 Method::PATCH,
                 body: objectToSnakeCaseArray($command)
             ),
@@ -58,22 +58,22 @@ class GlobalCommands extends Http
         );
     }
 
-    public function deleteCommand(string $applicationId, string $commandId): PromiseInterface
+    public function deleteCommand(string $applicationId, string $guildId, string $commandId): PromiseInterface
     {
         return $this->mapRequest(
             new Request(
-                Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMAND, $applicationId, $commandId),
+                Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMAND, $applicationId, $guildId, $commandId),
                 Method::DELETE
             ),
             ApplicationCommand::class
         );
     }
 
-    public function bulkOverwriteCommands(string $applicationId, ApplicationCommand ...$commands): PromiseInterface
+    public function bulkOverwriteCommands(string $applicationId, string $guildId, ApplicationCommand ...$commands): PromiseInterface
     {
         return $this->mapArrayRequest(
             new Request(
-                Endpoint::bind(Endpoint::GLOBAL_APPLICATION_COMMANDS, $applicationId),
+                Endpoint::bind(Endpoint::GUILD_APPLICATION_COMMANDS, $applicationId, $guildId),
                 Method::PUT,
                 body: array_map(objectToSnakeCaseArray(...), $commands)
             ),
