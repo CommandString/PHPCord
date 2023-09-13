@@ -2,9 +2,16 @@
 
 namespace PHPCord\PHPCord\Helpers;
 
-class Snowflake
+use Stringable;
+
+class Snowflake implements Stringable
 {
     public readonly string $snowflake;
+
+    public function __construct(string $snowflake)
+    {
+        $this->snowflake = $snowflake;
+    }
 
     public function getTime(): int
     {
@@ -24,5 +31,10 @@ class Snowflake
     public function getIncrement(): int
     {
         return $this->snowflake & 0xFFF;
+    }
+
+    public function __toString(): string
+    {
+        return $this->snowflake;
     }
 }
