@@ -13,6 +13,7 @@ class SelectMenu extends MessageComponent
 
     #[ObjectArrayType('options', SelectMenuOption::class)]
     public array $options;
+
     public ?int $minValues;
     public ?int $maxValues;
     public ?bool $disabled;

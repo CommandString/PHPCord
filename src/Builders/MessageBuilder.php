@@ -35,7 +35,8 @@ class MessageBuilder implements BuilderInterface
         return $this;
     }
 
-    public function withComponent(MessageComponent $component): self {
+    public function withComponent(MessageComponent $component): self
+    {
         $this->message->components[] = $component;
 
         return $this;
