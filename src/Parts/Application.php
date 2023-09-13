@@ -2,6 +2,8 @@
 
 namespace PHPCord\PHPCord\Parts;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use PHPCord\PHPCord\Parts\Guilds\Guild;
 use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\PrimitiveArrayType;
@@ -11,7 +13,9 @@ use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 #[SnakeToCamelCase]
 class Application
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public ?string $name;
     public ?string $icon;
     public ?string $description;

@@ -2,9 +2,14 @@
 
 namespace PHPCord\PHPCord\Parts\Channels;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
+
 class ForumTag
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $name;
     public bool $moderated;
     public ?string $emojiId;

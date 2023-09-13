@@ -2,12 +2,16 @@
 
 namespace PHPCord\PHPCord\Parts\Guilds;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
 class Role
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $name;
     public int $color;
     public bool $hoist;

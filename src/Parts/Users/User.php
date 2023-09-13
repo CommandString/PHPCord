@@ -2,13 +2,17 @@
 
 namespace PHPCord\PHPCord\Parts\Users;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use Stringable;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
 class User implements Stringable
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $username;
     public string $discriminator;
     public ?string $globalName;

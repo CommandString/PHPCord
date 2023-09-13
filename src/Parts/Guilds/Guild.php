@@ -2,13 +2,17 @@
 
 namespace PHPCord\PHPCord\Parts\Guilds;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
 class Guild
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $name;
     public ?string $icon;
     public ?string $icon_hash;

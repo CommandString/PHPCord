@@ -2,12 +2,16 @@
 
 namespace PHPCord\PHPCord\Parts\Messages;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
 class Attachment
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $filename;
     public ?string $description;
     public string $contentType;

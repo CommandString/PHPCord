@@ -2,6 +2,8 @@
 
 namespace PHPCord\PHPCord\Parts\Channels;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use PHPCord\PHPCord\Parts\Permissions\Overwrite;
 use PHPCord\PHPCord\Parts\Users\User;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
@@ -12,7 +14,9 @@ use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 #[SnakeToCamelCase]
 class Channel
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public ChannelType $type;
     public ?string $guildId;
     public ?int $position;

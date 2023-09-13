@@ -2,12 +2,16 @@
 
 namespace PHPCord\PHPCord\Parts\Guilds;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use PHPCord\PHPCord\Parts\Users\User;
 use Stringable;
 
 class Emoji implements Stringable
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $name;
     public ?array $roles;
     public ?User $user;

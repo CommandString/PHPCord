@@ -2,6 +2,8 @@
 
 namespace PHPCord\PHPCord\Parts\Interactions;
 
+use PHPCord\PHPCord\Helpers\Snowflake;
+use PHPCord\PHPCord\MapperTypes\ConstructorType;
 use PHPCord\PHPCord\Parts\Commands\ApplicationCommandInteractionDataOption;
 use PHPCord\PHPCord\Parts\Commands\ApplicationCommandType;
 use Tnapf\JsonMapper\Attributes\ObjectArrayType;
@@ -10,7 +12,9 @@ use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 #[SnakeToCamelCase]
 class InteractionApplicationCommandData
 {
-    public string $id;
+    #[ConstructorType('id', class: Snowflake::class)]
+    public Snowflake $id;
+
     public string $name;
     public ApplicationCommandType $type;
     public ?Resolved $resolved;
