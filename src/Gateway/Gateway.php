@@ -15,6 +15,10 @@ use PHPCord\PHPCord\Gateway\OpCodes\OpCode;
 use PHPCord\PHPCord\Helpers\HandleErrorTrait;
 use Evenement\EventEmitter;
 use PHPCord\PHPCord\Parts\Interactions\Interaction;
+use PHPCord\PHPCord\Parts\Interactions\InteractionApplicationCommandData;
+use PHPCord\PHPCord\Parts\Interactions\InteractionMessageComponentData;
+use PHPCord\PHPCord\Parts\Interactions\InteractionModalSubmitData;
+use PHPCord\PHPCord\Parts\Interactions\InteractionType;
 use Psr\Log\LoggerInterface;
 use Throwable;
 use Tnapf\JsonMapper\Mapper;
@@ -120,6 +124,7 @@ class Gateway extends EventEmitter
                 }
 
                 $event = Event::tryFrom($data->t);
+                $mappedData = null;
 
                 $map = match ($event) {
                     Event::TYPING_START => TypingStart::class,
@@ -127,15 +132,41 @@ class Gateway extends EventEmitter
                     Event::GUILD_MEMBER_ADD => GuildMemberAdd::class,
                     Event::GUILD_MEMBER_REMOVE => GuildMemberRemove::class,
                     Event::MESSAGE_CREATE => MessageCreate::class,
-                    Event::INTERACTION_CREATE => Interaction::class,
                     default => null
                 };
 
-                if ($map === null) {
+                if ($map !== null) {
+                    $mappedData = $this->mapper->map($map, $data->d);
+                }
+
+                if ($event === Event::INTERACTION_CREATE) {
+                    // TODO: refactor
+                    $type = InteractionType::tryFrom($data->d['type']);
+
+                    $map = match ($type) {
+                        InteractionType::APPLICATION_COMMAND => InteractionApplicationCommandData::class,
+                        InteractionType::MESSAGE_COMPONENT => InteractionMessageComponentData::class,
+                        InteractionType::MODAL_SUBMIT => InteractionModalSubmitData::class,
+                        default => null
+                    };
+
+                    /** @var array $interactionData */
+                    $interactionData = $data->d['data'];
+                    unset($data->d['data']);
+
+                    if ($map !== null) {
+                        $mappedData = $this->mapper->map(Interaction::class, $data->d);
+                        $interactionData = $this->mapper->map($map, $interactionData);
+                        /** @var InteractionModalSubmitData|InteractionApplicationCommandData|InteractionMessageComponentData $interactionData */
+                        $mappedData->data = $interactionData;
+                    }
+                }
+
+                if ($mappedData === null) {
                     return;
                 }
 
-                $this->emit("event.{$data->t}", [$this->mapper->map($map, $data->d)]);
+                $this->emit("event.{$data->t}", [$mappedData]);
             } catch (Throwable $e) {
                 $this->handleError($e);
             }
