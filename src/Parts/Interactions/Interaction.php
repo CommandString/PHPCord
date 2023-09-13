@@ -20,6 +20,7 @@ class Interaction
     #[ObjectType('data', InteractionMessageComponentData::class, true)]
     #[ObjectType('data', InteractionModalSubmitData::class, true)]
     public InteractionApplicationCommandData|InteractionMessageComponentData|InteractionModalSubmitData|null $data;
+
     public string $guildId;
     public ?Channel $channel;
     public ?string $channelId;

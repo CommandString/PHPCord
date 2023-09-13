@@ -6,8 +6,7 @@ function objectToSnakeCaseArray(object $class): array
 {
     $converter = new SnakeToCamelCase();
 
-    $loopArray = static function (array $givenArray) use ($converter, &$loopArray): array
-    {
+    $loopArray = static function (array $givenArray) use ($converter, &$loopArray): array {
         $array = [];
         foreach ($givenArray as $key => $value) {
             $key = $converter->convertFromCase($key);
@@ -20,12 +19,13 @@ function objectToSnakeCaseArray(object $class): array
                 }
 
                 $array[$key] = objectToSnakeCaseArray($value);
-            } else if (is_array($value)) {
+            } elseif (is_array($value)) {
                 $array[$key] = $loopArray($value);
             } else {
                 $array[$key] = $value;
             }
         }
+
         return $array;
     };
 
