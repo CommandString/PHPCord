@@ -6,6 +6,7 @@ use PHPCord\PHPCord\Parts\Channels\Channel;
 use PHPCord\PHPCord\Parts\Guilds\Member;
 use PHPCord\PHPCord\Parts\Messages\Message;
 use PHPCord\PHPCord\Parts\Users\User;
+use Tnapf\JsonMapper\Attributes\ObjectType;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 #[SnakeToCamelCase]
@@ -14,7 +15,11 @@ class Interaction
     public string $id;
     public string $applicationId;
     public InteractionType $type;
-    public InteractionData $data;
+
+    #[ObjectType('data', InteractionApplicationCommandData::class, true)]
+    #[ObjectType('data', InteractionMessageComponentData::class, true)]
+    #[ObjectType('data', InteractionModalSubmitData::class, true)]
+    public InteractionApplicationCommandData|InteractionMessageComponentData|InteractionModalSubmitData|null $data;
     public string $guildId;
     public ?Channel $channel;
     public ?string $channelId;
