@@ -1,5 +1,8 @@
 <?php
 
+namespace PHPCord\PHPCord\Helpers;
+
+use BackedEnum;
 use Tnapf\JsonMapper\Attributes\SnakeToCamelCase;
 
 function objectToSnakeCaseArray(object $class): array

@@ -8,6 +8,7 @@ use PHPCord\PHPCord\Rest\Driver\Http;
 use PHPCord\PHPCord\Rest\Driver\Method;
 use PHPCord\PHPCord\Rest\Driver\Request;
 use React\Promise\PromiseInterface;
+use function PHPCord\PHPCord\Helpers\objectToSnakeCaseArray;
 
 class GlobalCommands extends Http
 {

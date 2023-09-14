@@ -8,6 +8,7 @@ use PHPCord\PHPCord\Rest\Driver\Method;
 use PHPCord\PHPCord\Rest\Driver\Request;
 use Discord\Http\Endpoint;
 use React\Promise\PromiseInterface;
+use function PHPCord\PHPCord\Helpers\objectToSnakeCaseArray;
 
 /**
  * TODO: Finish bindings
