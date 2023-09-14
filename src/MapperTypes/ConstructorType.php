@@ -3,11 +3,11 @@
 namespace PHPCord\PHPCord\MapperTypes;
 
 use Attribute;
-use Tnapf\JsonMapper\Attributes\CallbackType;
+use Tnapf\JsonMapper\Attributes\MappableType;
 use Tnapf\JsonMapper\MapperInterface;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
-class ConstructorType extends CallbackType
+class ConstructorType extends MappableType
 {
     public function __construct(
         string $name,

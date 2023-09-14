@@ -16,7 +16,7 @@
     "monolog/monolog": "^3.4",
     "ratchet/pawl": "^0.4.1",
     "react/async": "^4.1",
-    "tnapf/jsonmapper": "dev-allow-mixed"
+    "tnapf/jsonmapper": "^1.4.0"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.31",
