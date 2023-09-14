@@ -31,15 +31,15 @@
   "autoload": {
     "psr-4": {
       "PHPCord\\PHPCord\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "PHPCord\\PHPCord\\Test\\": "tests/"
     },
     "files": [
       "src/Helpers/functions.php"
     ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PHPCord\\PHPCord\\Test\\": "tests/"
+    }
   },
   "config": {
     "allow-plugins": {
