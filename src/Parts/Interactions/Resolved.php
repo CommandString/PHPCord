@@ -12,21 +12,21 @@ use Tnapf\JsonMapper\Attributes\ObjectArrayType;
 
 class Resolved
 {
-    #[ObjectArrayType('users', User::class)]
-    public array $users;
+    #[ObjectArrayType('users', User::class, nullable: true)]
+    public ?array $users;
 
-    #[ObjectArrayType('members', Member::class)]
-    public array $members;
+    #[ObjectArrayType('members', Member::class, nullable: true)]
+    public ?array $members;
 
-    #[ObjectArrayType('roles', Role::class)]
-    public array $roles;
+    #[ObjectArrayType('roles', Role::class, nullable: true)]
+    public ?array $roles;
 
-    #[ObjectArrayType('channels', Channel::class)]
-    public array $channels;
+    #[ObjectArrayType('channels', Channel::class, nullable: true)]
+    public ?array $channels;
 
-    #[ObjectArrayType('messages', Message::class)]
-    public array $messages;
+    #[ObjectArrayType('messages', Message::class, nullable: true)]
+    public ?array $messages;
 
-    #[ObjectArrayType('attachments', Attachment::class)]
-    public array $attachments;
+    #[ObjectArrayType('attachments', Attachment::class, nullable: true)]
+    public ?array $attachments;
 }
