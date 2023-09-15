@@ -22,6 +22,7 @@ use PHPCord\PHPCord\Parts\Interactions\InteractionType;
 use Psr\Log\LoggerInterface;
 use Throwable;
 use Tnapf\JsonMapper\Mapper;
+
 use function PHPCord\PHPCord\Helpers\objectToSnakeCaseArray;
 
 class Gateway extends EventEmitter
