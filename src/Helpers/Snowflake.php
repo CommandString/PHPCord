@@ -15,7 +15,7 @@ class Snowflake implements Stringable
 
     public function getTime(): int
     {
-        return ($this->snowflake >> 22) + 1420070400000;
+        return floor((($this->snowflake >> 22) + 1420070400000) / 1000);
     }
 
     public function getWorkerId(): int
