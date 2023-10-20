@@ -19,6 +19,16 @@ use React\Promise\PromiseInterface;
  */
 class Users extends Http
 {
+    public function get(string $id): PromiseInterface
+    {
+        return $this->mapRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::USER, $id)
+            ),
+            User::class
+        );
+    }
+    
     public function getCurrent(): PromiseInterface
     {
         return $this->mapRequest(
