@@ -10,7 +10,7 @@ class RoleTags
     public ?string $botId;
     public ?string $integrationId;
     public ?bool $premiumSubscriber;
-    public string $subscriptionListingId;
+    public ?string $subscriptionListingId;
     public ?bool $availableForPurchase;
     public ?bool $guildConnections;
 }
