@@ -28,7 +28,7 @@ class Users extends Http
             User::class
         );
     }
-    
+
     public function getCurrent(): PromiseInterface
     {
         return $this->mapRequest(
