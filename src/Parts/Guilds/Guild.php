@@ -23,26 +23,26 @@ class Guild
     public ?string $permissions;
     public ?string $region;
     public ?string $afkChannelId;
-    public int $afkTimeout;
+    public ?int $afkTimeout;
     public ?bool $widgetEnabled;
     public ?string $widgetChannelId;
-    public int $verificationLevel;
-    public int $defaultMessageNotifications;
-    public int $explicitContentFilter;
+    public ?int $verificationLevel;
+    public ?int $defaultMessageNotifications;
+    public ?int $explicitContentFilter;
 
     /** @var Role[] $roles */
-    #[ObjectArrayType('roles', Role::class)]
-    public array $roles;
+    #[ObjectArrayType('roles', Role::class, nullable: true)]
+    public ?array $roles;
 
     /** @var Emoji[] $emojis */
-    #[ObjectArrayType('emojis', Emoji::class)]
-    public array $emojis;
+    #[ObjectArrayType('emojis', Emoji::class, nullable: true)]
+    public ?array $emojis;
 
     // TODO: Create Feature abstraction
-    public array $features;
+    public ?array $features;
 
     // TODO create MFA Enum
-    public int $mfaLevel;
+    public ?int $mfaLevel;
     public ?string $applicationId;
     public ?int $systemChannelFlags;
     public ?string $rulesChannelId;
@@ -64,10 +64,10 @@ class Guild
 
     // TODO: Create welcome screen abstraction
     public ?array $welcomeScreen;
-    public int $nsfwLevel;
+    public ?int $nsfwLevel;
 
     // TODO: Create Sticker abstraction
     public ?array $stickers;
-    public bool $premiumProgressBarEnabled;
+    public ?bool $premiumProgressBarEnabled;
     public ?string $safetyAlertsChannelId;
 }

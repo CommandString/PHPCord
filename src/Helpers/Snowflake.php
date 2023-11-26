@@ -2,9 +2,10 @@
 
 namespace PHPCord\PHPCord\Helpers;
 
+use JsonSerializable;
 use Stringable;
 
-class Snowflake implements Stringable
+class Snowflake implements Stringable, JsonSerializable
 {
     public readonly string $snowflake;
 
@@ -34,6 +35,11 @@ class Snowflake implements Stringable
     }
 
     public function __toString(): string
+    {
+        return $this->snowflake;
+    }
+
+    public function jsonSerialize(): string
     {
         return $this->snowflake;
     }

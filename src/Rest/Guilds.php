@@ -2,16 +2,18 @@
 
 namespace PHPCord\PHPCord\Rest;
 
+use Discord\Http\Endpoint;
 use PHPCord\PHPCord\Parts\Channels\Channel;
 use PHPCord\PHPCord\Parts\Guilds\Guild;
+use PHPCord\PHPCord\Parts\Guilds\GuildPreview;
+use PHPCord\PHPCord\Parts\Guilds\Invite;
+use PHPCord\PHPCord\Parts\Guilds\Member;
 use PHPCord\PHPCord\Rest\Driver\Http;
 use PHPCord\PHPCord\Rest\Driver\Request;
-use Discord\Http\Endpoint;
 use React\Promise\PromiseInterface;
 
 /**
  * TODO: Finish bindings
- * getPreview
  * modify
  * delete
  * createChannel
@@ -38,7 +40,6 @@ use React\Promise\PromiseInterface;
  * getPruneCount
  * beginPrune
  * getVoiceRegions
- * getInvites
  * getIntegrations
  * deleteIntegration
  * getWidgetSettings
@@ -75,6 +76,27 @@ class Guilds extends Http
                 url: Endpoint::bind(Endpoint::GUILD_CHANNELS, $guildId),
             ),
             class: Channel::class
+        );
+    }
+
+    public function getInvites(string $guildId): PromiseInterface
+    {
+        return $this->mapArrayRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::GUILD_INVITES, $guildId),
+            ),
+            class: Invite::class
+        );
+    }
+
+    public function listMembers(string $guildId, int $limit = 1000, ?string $after = null): PromiseInterface
+    {
+        return $this->mapArrayRequest(
+            new Request(
+                url: Endpoint::bind(Endpoint::GUILD_MEMBERS, $guildId),
+                query: compact('limit', 'after'),
+            ),
+            class: Member::class
         );
     }
 }

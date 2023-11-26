@@ -51,7 +51,7 @@ class Channel
     public ?ThreadMember $threadMember;
     public ?int $defaultAutoArchiveDuration;
     public ?string $permissions;
-    public int $flags;
+    public ?int $flags;
     public ?int $totalMessageSent;
 
     /** @var ForumTag[]|null */
